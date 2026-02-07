@@ -12,11 +12,12 @@ public class Student {
         this.marks = marks;
     }
 
-    // Getters and Setters (Encapsulation)
+    // Getter
     public int getId() {
         return id;
     }
 
+    // Setters
     public void setName(String name) {
         this.name = name;
     }
@@ -31,9 +32,10 @@ public class Student {
 
     public void displayInfo() {
         System.out.println(
-                 "ID: " + id +
-                ", Name: " + name +
-                ", Branch: " + branch +
-                ", Marks: " + marks);
+            "ID: " + id +
+            ", Name: " + name +
+            ", Branch: " + branch +
+            ", Marks: " + marks
+        );
     }
 }
