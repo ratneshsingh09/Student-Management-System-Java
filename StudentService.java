@@ -27,9 +27,10 @@ public class StudentService {
     // View Students
     public void viewStudents() {
         if (students.isEmpty()) {
-            System.out.println("No students found.");
+            System.out.println("No students available.");
             return;
         }
+
         for (Student s : students) {
             s.displayInfo();
         }
@@ -43,6 +44,30 @@ public class StudentService {
         for (Student s : students) {
             if (s.getId() == id) {
                 s.displayInfo();
+                return;
+            }
+        }
+        System.out.println("Student not found.");
+    }
+
+    // Update Student
+    public void updateStudent() {
+        System.out.print("Enter ID to update: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        for (Student s : students) {
+            if (s.getId() == id) {
+                System.out.print("Enter new name: ");
+                s.setName(sc.nextLine());
+
+                System.out.print("Enter new branch: ");
+                s.setBranch(sc.nextLine());
+
+                System.out.print("Enter new marks: ");
+                s.setMarks(sc.nextDouble());
+
+                System.out.println("Student updated successfully!");
                 return;
             }
         }
@@ -64,3 +89,4 @@ public class StudentService {
         System.out.println("Student not found.");
     }
 }
+
